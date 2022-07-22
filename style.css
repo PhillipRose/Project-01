@@ -8,7 +8,7 @@ body{
 
 
 
-
+/* Tablets - header changes color */
 @media screen and (max-width: 992px) {
     header {
       background: #772014;
