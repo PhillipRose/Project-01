@@ -10,3 +10,31 @@
 // Extras 
 // Add in a function to store favorites and always puts them at the top.
 // Make a function tied to a button to math in the humidity for the true hottest/coldest days of the forecast. 
+
+
+
+// user input saved to variable 
+// var inputValue = whatever the user enters
+var apiUrl = ('https://reqres.in/api/users');
+
+// template fetch request to the API
+ var getData = function(apiUrl){
+    // take in above URL to get data 
+     fetch(apiUrl)
+    //  once we get the data, add a .json() to make data readable 
+     .then(function (response){
+        // send out the readable data 
+        return response.json();
+     })
+     .then(function(data){
+        // look at how the data can be interacted with
+        console.log(data.data[0].email);              
+     })  
+    //  do anything we need with the data  
+    //  modify/show information to user send it to html
+    
+};
+
+// addEventListener goes here for button press
+getData(apiUrl);
+
