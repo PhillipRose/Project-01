@@ -38,3 +38,55 @@ var apiUrl = ('https://reqres.in/api/users');
 // addEventListener goes here for button press
 getData(apiUrl);
 
+// WORKING FETCH FOR WEATHER API 
+
+
+// user input saved to variable 
+var inputEl = document.querySelector('input');
+var inputValue = inputEl;
+// my key if needed, you can use your own just assign it to the key below as a string. e4d3b96206444e95a9c7ce98d06c55b0
+const key = ``
+var pTag = document.querySelector('p')
+
+// ('https://api.weatherbit.io/v2.0/forecast/daily?postal_code=' + inputValue)
+
+
+function clicker(){
+   // console.log('function hitting');
+   // console.log(inputEl.value);
+   inputValue = inputEl.value;
+   var apiUrl = (`https://api.weatherbit.io/v2.0/forecast/daily?postal_code=${inputValue}&days=5&key=${key}`);
+   // console.log(inputValue);
+   // console.log(apiUrl);
+   // debugger;
+   getData(apiUrl);
+}
+
+
+// template fetch request to the API
+ var getData = function(apiUrl){
+    // add any extra variables here 
+    // take in above URL to get data 
+     fetch(apiUrl)
+    //  once we get the data, add a .json() to make data readable 
+     .then(function (response){
+        // send out the readable data 
+        return response.json();
+     })
+     .then(function(data){
+        // look at how the data can be interacted with
+        //  do anything we need with the data  
+        //  modify/show information to user send it to html
+      //   console.log(data.data[0].max_temp);
+      pTag.append(data.data[0].max_temp)              
+     })  
+    ;    
+};
+
+// addEventListener goes here for button press
+// getData(apiUrl);
+
+
+
+
+
