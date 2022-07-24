@@ -11,6 +11,8 @@
 // Add in a function to store favorites and always puts them at the top.
 // Make a function tied to a button to math in the humidity for the true hottest/coldest days of the forecast. 
 
+
+
 // user input saved to variable 
 // var inputValue = whatever the user enters
 var apiUrl = ('https://reqres.in/api/users');
@@ -35,3 +37,4 @@ var apiUrl = ('https://reqres.in/api/users');
 
 // addEventListener goes here for button press
 getData(apiUrl);
+
