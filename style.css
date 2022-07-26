@@ -1,30 +1,30 @@
-body{
-    background-color: white;    
+body {
+    background-color: white;
 }
 
 
-
-
-
-
-
 /* Tablets - header changes color */
+
 @media screen and (max-width: 992px) {
     header {
-      background: #772014;
+        background: #772014;
     }
-  }
-  
-  /* Large smartphones - navbar changes color */
-  @media screen and (max-width: 768px) {
+}
+
+
+/* Large smartphones - navbar changes color */
+
+@media screen and (max-width: 768px) {
     nav {
-      background-color: #bb8588;
+        background-color: #bb8588;
     }
-  }
-  
-  /* Small smartphones - image placeholders change color */
-  @media screen and (max-width: 576px) {
+}
+
+
+/* Small smartphones - image placeholders change color */
+
+@media screen and (max-width: 576px) {
     .sample-img {
-      background-color: #8ac4ff;
+        background-color: #8ac4ff;
     }
-  }
+}
