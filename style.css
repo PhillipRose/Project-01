@@ -1,7 +1,10 @@
 body {
     background-color: white;
 }
-
+.scoop {
+    text-align: center;
+    font-size: x-large;
+}
 
 /* Tablets - header changes color */
 
