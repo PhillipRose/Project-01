@@ -113,7 +113,6 @@ function showDay(date) {
       var days = moment(date[i].datetime).format('dddd');
       daySlot.append(days);
       console.log(days + ' is the day');
-
    }
 }
 
