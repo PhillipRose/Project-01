@@ -27,14 +27,17 @@ function weatherBtn(){
  
 };
 // on click for the ice cream button takes in the Lon and Lat from weather api. Calls the Mapquest fetch.
-function storeBtn(lon, lat){
-   // console.log(lat);
-   
-   storeApi = `https://www.mapquestapi.com/search/v4/place?location=${apiLon}%2C%20${apiLat}&sort=distance&feedback=false&key=${mapKey}&pageSize=5&q=ice%20cream`;   
-   console.log(storeApi);
+function storeBtn(){
 
    getStores(storeApi);
+}
 
+
+function storeSearch(apiLon, apiLat){   
+   storeApi = `https://www.mapquestapi.com/search/v4/place?location=${apiLon}%2C%20${apiLat}&sort=distance&feedback=false&key=${mapKey}&pageSize=5&q=ice%20cream`;   
+   console.log(storeApi);
+   // debugger;
+   getStores(storeApi);
 }
 
 
@@ -47,16 +50,14 @@ function getWeather(apiUrl){
         firstResponse.then(
          (data) => {
             // deal with all the weather data inside here
-            // call functions and pass them any needed data here 
-            // console.log(data.lon);
-            // console.log(typeof data.lon);
-            // console.log(data.data);
-            // console.log(data.data[0]);
-            console.log(data);
+            // call functions and pass them any needed data here
+
+
+
+            // This data is for the map api url 
             apiLat = Number(data.lat);
             apiLon = Number(data.lon); 
-            console.log(apiLat + ' is the lat');
-            console.log(apiLon + 'is the lon');
+            storeSearch(apiLon, apiLat);
 
             return data;            
          }
@@ -70,6 +71,7 @@ function getWeather(apiUrl){
 
 // fetch request from Mapquest api
 function getStores(storeApi){
+   console.log('getStores is hitting and url is: ' + storeApi);
  var shopData =  fetch(storeApi)
     .then(function(response){
       if (response.ok){
@@ -83,9 +85,6 @@ function getStores(storeApi){
          }
        )
       }
-      })      
-      .then(function(data){
-         console.log(data);
       })
       .catch(err => console.log(err));
       return shopData;
