@@ -26,4 +26,3 @@ It's a hot day outside and you are craving ice cream. Using our application it w
 * Bulma
 * MapQuest API
 * Weatherbit API
-
