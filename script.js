@@ -28,7 +28,6 @@ function weatherBtn(){
 };
 // on click for the ice cream button takes in the Lon and Lat from weather api. Calls the Mapquest fetch.
 function storeBtn(){
-
    getStores(storeApi);
 }
 
@@ -49,15 +48,22 @@ function getWeather(apiUrl){
         var firstResponse = response.json();
         firstResponse.then(
          (data) => {
+            console.log(data);
             // deal with all the weather data inside here
             // call functions and pass them any needed data here
+
+            // day of the week data to parse with momentJS
+            date = data.data;
+            showDay(date);
+            // console.log('This is the date:  ' + date);
+            // console.log(moment(date).format('dddd'));
 
 
 
             // This data is for the map api url 
             apiLat = Number(data.lat);
             apiLon = Number(data.lon); 
-            storeSearch(apiLon, apiLat);
+            // storeSearch(apiLon, apiLat);
 
             return data;            
          }
@@ -100,5 +106,15 @@ function getStores(storeApi){
 // var value = data.data[i].max_temp;
 // card.append(value);
 
+function showDay(date) {
+   for (var i =0; i <= 5; i++){
+      console.log(i);
+      var daySlot = document.getElementById('day-' + i)
+      var days = moment(date[i].datetime).format('dddd');
+      daySlot.append(days);
+      console.log(days + ' is the day');
+
+   }
+}
 
 
