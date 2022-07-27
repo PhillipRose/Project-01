@@ -1,6 +1,9 @@
 // make sure both the key const has a key inside the string.
 // html elements saved to variables 
 var inputEl = document.querySelector('input');
+// needed html variables list 
+   // weather card class 
+
 
 
 
@@ -11,22 +14,24 @@ const weatherKey = `e4d3b96206444e95a9c7ce98d06c55b0`
 // mapKey is: 28oyI0GbeI2xfeMfXGihR4g2FOlIRb4
 const mapKey = '28oyI0GbeI2xfeMfXGihR4g2FOlIRb4p'
 // use these to hold the Lon and Lat values from the weather api for use in Mapquest api
-var apiLon, apiLat;
+var apiLon; 
+var apiLat;
 // on click for the weather button 
-function getWeather(){
+function weatherBtn(){
    // get input value from user 
    inputValue = inputEl.value;
    // add that value to the URL with correct syntax 
-   var apiUrl = (`https://api.weatherbit.io/v2.0/forecast/daily?postal_code=${inputValue}&days=5&key=${weatherKey}`);
+   var apiUrl = (`https://api.weatherbit.io/v2.0/forecast/daily?postal_code=${inputValue}&days=5&units=I&key=${weatherKey}`);
    // Pass the URL to the fetch function to get the data
    getWeather(apiUrl);   
  
 };
 // on click for the ice cream button takes in the Lon and Lat from weather api. Calls the Mapquest fetch.
-function getStores(lon, lat){
-   apiLon = lon;
-   apiLat = lat;
+function storeBtn(lon, lat){
+   // console.log(lat);
+   
    storeApi = `https://www.mapquestapi.com/search/v4/place?location=${apiLon}%2C%20${apiLat}&sort=distance&feedback=false&key=${mapKey}&pageSize=5&q=ice%20cream`;   
+   console.log(storeApi);
 
    getStores(storeApi);
 
@@ -34,36 +39,67 @@ function getStores(lon, lat){
 
 
 // WORKING FETCH FOR WEATHER API
- var getWeather = function(apiUrl){
-    // add any extra variables here 
-    // take in above URL to get data 
-    var weatherData = fetch(apiUrl)
-    //  once we get the data, add a .json() to make data readable 
+function getWeather(apiUrl){
+    var weatherData =  fetch(apiUrl)
      .then(function (response){
-        // send out the readable data 
-        return response.json();
-     })
-     .then(function(data){
-      console.log(data);
-     });
-  return weatherData;
+      if (response.ok){      
+        var firstResponse = response.json();
+        firstResponse.then(
+         (data) => {
+            // deal with all the weather data inside here
+            // call functions and pass them any needed data here 
+            // console.log(data.lon);
+            // console.log(typeof data.lon);
+            // console.log(data.data);
+            // console.log(data.data[0]);
+            console.log(data);
+            apiLat = Number(data.lat);
+            apiLon = Number(data.lon); 
+            console.log(apiLat + ' is the lat');
+            console.log(apiLon + 'is the lon');
+
+            return data;            
+         }
+         )
+         .catch(err => console.log(err))
+     }});
+     return weatherData;
 };
-// store fetch request from Mapquest api
+
+
+
+// fetch request from Mapquest api
 function getStores(storeApi){
  var shopData =  fetch(storeApi)
     .then(function(response){
-         return response.json();
-      })
+      if (response.ok){
+       var secondResponse = response.json();
+       secondResponse.then(
+         (data) => {
+            // deal with all the map data here 
+            // call any needed functions and pass them the data from here 
+            console.log(data);
+            return data;
+         }
+       )
+      }
+      })      
       .then(function(data){
-
-         var shopData = data;
          console.log(data);
-         return shopData;
       })
+      .catch(err => console.log(err));
       return shopData;
 };
 
+// var title = document.createElement('<p>')
+// var street = document.createElement('<p>')
 
+// title.append(data)
+// street.append(data);
+
+// var card = document.getElementById("max-" + i)
+// var value = data.data[i].max_temp;
+// card.append(value);
 
 
 
