@@ -1,177 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
     <title>What's the scoop</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <p class="max-temp"></p>
     <div class="field has-addons">
-        <div class="control">
-            <input class="input" type="text" placeholder="Enter Zipcode">
-        </div>
-        <button onclick="weatherBtn()">Search Weather</button>
-        <script src="./script.js"></script>
+      <div class="control">
+        <input class="input" type="text" placeholder="Enter Zipcode" />
+      </div>
+      <button onclick="weatherBtn()">Search Weather</button>
+      <script src="./script.js"></script>
     </div>
 
     <div class="columns is-mobile">
-        <div class="column">
-            Monday
-            <div class="card">
-                <div class="card-content">
-                    <div class="content is-medium">
-                        <p>max-temp</p>
-                        <p>min-temp</p>
-                    </div>
-                </div>
+      <div class="column">
+        Monday
+        <div class="card">
+          <div class="card-content">
+            <div class="content is-medium">
+              <p>max-temp</p>
+              <p>min-temp</p>
             </div>
+          </div>
         </div>
-        <div class="column">
-            Tuesday
-            <div class="card">
-                <div class="card-content">
-                    <div class="content is-medium">
-                        <p>max-temp</p>
-                        <p>min-temp</p>
-                    </div>
-                </div>
+      </div>
+      <div class="column">
+        Tuesday
+        <div class="card">
+          <div class="card-content">
+            <div class="content is-medium">
+              <p>max-temp</p>
+              <p>min-temp</p>
             </div>
+          </div>
         </div>
-        <div class="column">
-            Wednesday
-            <div class="card">
-                <div class="card-content">
-                    <div class="content is-medium">
-                        <p>max-temp</p>
-                        <p>min-temp</p>
-                    </div>
-                </div>
+      </div>
+      <div class="column">
+        Wednesday
+        <div class="card">
+          <div class="card-content">
+            <div class="content is-medium">
+              <p>max-temp</p>
+              <p>min-temp</p>
             </div>
+          </div>
         </div>
-        <div class="column">
-            Thursday
-            <div class="card">
-                <div class="card-content">
-                    <div class="content is-medium">
-                        <p>max-temp</p>
-                        <p>min-temp</p>
-                    </div>
-                </div>
+      </div>
+      <div class="column">
+        Thursday
+        <div class="card">
+          <div class="card-content">
+            <div class="content is-medium">
+              <p>max-temp</p>
+              <p>min-temp</p>
             </div>
+          </div>
         </div>
-        <div class="column">
-            Friday
-            <div class="card">
-                <div class="card-content">
-                    <div class="content is-medium">
-                        <p>max-temp</p>
-                        <p>min-temp</p>
-                    </div>
-                </div>
+      </div>
+      <div class="column">
+        Friday
+        <div class="card">
+          <div class="card-content">
+            <div class="content is-medium">
+              <p>max-temp</p>
+              <p>min-temp</p>
             </div>
+          </div>
         </div>
-        <div class="column">
-            Saturday
-            <div class="card">
-                <div class="card-content">
-                    <div class="content is-medium">
-                       <p>max-temp</p>
-                       <p>min-temp</p>
-                    </div>
-                </div>
+      </div>
+      <div class="column">
+        Saturday
+        <div class="card">
+          <div class="card-content">
+            <div class="content is-medium">
+              <p>max-temp</p>
+              <p>min-temp</p>
             </div>
+          </div>
         </div>
-        <div class="column">
-            Sunday
-            <div class="card">
-                <div class="card-content">
-                    <div class="content is-medium">
-                       <p>max-temp</p>
-                       <p>min-temp</p>
-                    </div>
-                </div>
+      </div>
+      <div class="column">
+        Sunday
+        <div class="card">
+          <div class="card-content">
+            <div class="content is-medium">
+              <p>max-temp</p>
+              <p>min-temp</p>
             </div>
+          </div>
         </div>
+      </div>
     </div>
     <div class="buttons">
-        <a href="" class="button is-primary is-outlined is-medium">Weather</a>
-        <a href="" class="button is-info is-outlined is-medium">Ice Cream</a>
+      <a href="" class="button is-primary is-outlined is-medium">Weather</a>
+      <a
+        href=""
+        class="button is-info is-outlined is-medium"
+        onclick="storeBtn()"
+        >Ice Cream</a
+      >
     </div>
 
     <div class="columns is-mobile">
-        <div class="column">
-            First column
-            <div class="card">
-                <div class="card-content">
-                    <div class="content is-small">
-
-                    </div>
-                </div>
-            </div>
+      <div class="column">
+        First column
+        <div class="card">
+          <div class="card-content">
+            <div class="content is-small"></div>
+          </div>
         </div>
-        <div class="column">
-            Second column
-            <div class="card">
-                <div class="card-content">
-                    <div class="content is-small">
-
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="column">
+        Second column
+        <div class="card">
+          <div class="card-content">
+            <div class="content is-small"></div>
+          </div>
         </div>
-        <div class="column">
-            Third column
-            <div class="card">
-                <div class="card-content">
-                    <div class="content is-small">
-
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="column">
+        Third column
+        <div class="card">
+          <div class="card-content">
+            <div class="content is-small"></div>
+          </div>
         </div>
-        <div class="column">
-            Fourth column
-            <div class="card">
-                <div class="card-content">
-                    <div class="content is-small">
-
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="column">
+        Fourth column
+        <div class="card">
+          <div class="card-content">
+            <div class="content is-small"></div>
+          </div>
         </div>
-        <div class="column">
-            Fifth column
-            <div class="card">
-                <div class="card-content">
-                    <div class="content is-small">
-
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="column">
+        Fifth column
+        <div class="card">
+          <div class="card-content">
+            <div class="content is-small"></div>
+          </div>
         </div>
+      </div>
     </div>
 
+    <<<<<<< HEAD
+    <div class="block">
+      <a href="" class="button is-primary is-outlined is-medium">Weather</a>
+      <a href="" class="button is-info is-outlined is-medium">Ice Cream</a>
+    </div>
+    ======= >>>>>>> 521b49421b6cac09c8a28a73467df4a2d2037200
+  </body>
 
-
-
-
-
-
-    <<<<<<< HEAD <div class="block">
-        <a href="" class="button is-primary is-outlined is-medium">Weather</a>
-        <a href="" class="button is-info is-outlined is-medium">Ice Cream</a>
-        </div>
-        ======= >>>>>>> 521b49421b6cac09c8a28a73467df4a2d2037200
-
-
-</body>
-
-<!-- test  -->
-
+  <!-- test  -->
 </html>

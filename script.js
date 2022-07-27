@@ -28,12 +28,10 @@ function weatherBtn(){
 };
 // on click for the ice cream button takes in the Lon and Lat from weather api. Calls the Mapquest fetch.
 function storeBtn(lon, lat){
-   apiLon = lon;
-   apiLat = lat;
-   console.log(apiLon);
-   console.log(apiLat);
-   debugger;
+   // console.log(lat);
+   
    storeApi = `https://www.mapquestapi.com/search/v4/place?location=${apiLon}%2C%20${apiLat}&sort=distance&feedback=false&key=${mapKey}&pageSize=5&q=ice%20cream`;   
+   console.log(storeApi);
 
    getStores(storeApi);
 
@@ -42,35 +40,66 @@ function storeBtn(lon, lat){
 
 // WORKING FETCH FOR WEATHER API
 function getWeather(apiUrl){
-    // add any extra variables here 
-    // take in above URL to get data 
-    var weatherData = fetch(apiUrl)
-    //  once we get the data, add a .json() to make data readable 
+    var weatherData =  fetch(apiUrl)
      .then(function (response){
-        // send out the readable data 
-        return response.json();
-     })
-     .then(function(data){
-      console.log(data);
-     });
-  return weatherData;
+      if (response.ok){      
+        var firstResponse = response.json();
+        firstResponse.then(
+         (data) => {
+            // deal with all the weather data inside here
+            // call functions and pass them any needed data here 
+            // console.log(data.lon);
+            // console.log(typeof data.lon);
+            // console.log(data.data);
+            // console.log(data.data[0]);
+            console.log(data);
+            apiLat = Number(data.lat);
+            apiLon = Number(data.lon); 
+            console.log(apiLat + ' is the lat');
+            console.log(apiLon + 'is the lon');
+
+            return data;            
+         }
+         )
+         .catch(err => console.log(err))
+     }});
+     return weatherData;
 };
+
+
+
 // fetch request from Mapquest api
 function getStores(storeApi){
  var shopData =  fetch(storeApi)
     .then(function(response){
-         return response.json();
-      })
+      if (response.ok){
+       var secondResponse = response.json();
+       secondResponse.then(
+         (data) => {
+            // deal with all the map data here 
+            // call any needed functions and pass them the data from here 
+            console.log(data);
+            return data;
+         }
+       )
+      }
+      })      
       .then(function(data){
-
-         var shopData = data;
          console.log(data);
-         return shopData;
       })
+      .catch(err => console.log(err));
       return shopData;
 };
 
+// var title = document.createElement('<p>')
+// var street = document.createElement('<p>')
 
+// title.append(data)
+// street.append(data);
+
+// var card = document.getElementById("max-" + i)
+// var value = data.data[i].max_temp;
+// card.append(value);
 
 
 
