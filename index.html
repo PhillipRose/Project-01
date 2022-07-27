@@ -8,35 +8,36 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
-    
     <title>What's the scoop</title>
- </head>
-
+</head>
 
 <body>
 <div class="py-6 px-6 has-background-primary-light">
     <h1 class="title is-1">What's the scoop?</h1>
     <h2 class="title is-2">You scream, we scream, we ALL scream for ice cream!</h2>
-    <p>test</p>
-    <p class="max-temp"></p>
     <div class="field has-addons">
-      <div class="control">
-        <input class="input" type="text" placeholder="Enter Zipcode" />
-      </div>
-      <button onclick="weatherBtn()">Search Weather</button>
-      <script src="./script.js"></script>
+        <div class="control">
+            <input class="input" type="text" placeholder="Enter Zipcode">
+        </div>
+        <div class="buttons">
+            <button onclick="weatherBtn()" class="button is-link is-outlined is-medium">Weather</button>
+        </div>
     </div>
-
-    <div class="buttons">
-        <a href="" class="button is-link is-outlined is-medium">Weather</a>
-        <a href="" class="button is-primary is-outlined is-medium">Ice Cream</a>
-    </div>
-
 
     <div class="columns is-mobile">
-
         <div class="column has-text-link">
             Monday
+            <div class="card">
+                <div class="card-content">
+                    <div class="content is-medium">
+                        <p id="max-0">max-temp</p>
+                        <p id="min-0">min-temp</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column has-text-link">
+            Tuesday
             <div class="card">
                 <div class="card-content">
                     <div class="content is-medium">
@@ -44,13 +45,10 @@
                         <p id="min-1">min-temp</p>
                     </div>
                 </div>
-
             </div>
-          </div>
         </div>
-
         <div class="column has-text-link">
-            Tuesday
+            Wednesday
             <div class="card">
                 <div class="card-content">
                     <div class="content is-medium">
@@ -58,13 +56,10 @@
                         <p id="min-2">min-temp</p>
                     </div>
                 </div>
-
             </div>
-          </div>
         </div>
-
         <div class="column has-text-link">
-            Wednesday
+            Thursday
             <div class="card">
                 <div class="card-content">
                     <div class="content is-medium">
@@ -73,11 +68,9 @@
                     </div>
                 </div>
             </div>
-          </div>
         </div>
-
         <div class="column has-text-link">
-            Thursday
+            Friday
             <div class="card">
                 <div class="card-content">
                     <div class="content is-medium">
@@ -86,11 +79,9 @@
                     </div>
                 </div>
             </div>
-          </div>
         </div>
-
         <div class="column has-text-link">
-            Friday
+            Saturday
             <div class="card">
                 <div class="card-content">
                     <div class="content is-medium">
@@ -99,50 +90,32 @@
                     </div>
                 </div>
             </div>
-          </div>
         </div>
-
-        <div class="column has-text-link">
-            Saturday
-            <div class="card">
-                <div class="card-content">
-                    <div class="content is-medium">
-                       <p id="max-6">max-temp</p>
-                       <p id="min-6">min-temp</p>
-                    </div>
-                </div>
-
-            </div>
-          </div>
-        </div>
-
         <div class="column has-text-link">
             Sunday
             <div class="card">
                 <div class="card-content">
                     <div class="content is-medium">
-                       <p id="max-7">max-temp</p>
-                       <p id="min-7">min-temp</p>
+                        <p id="max-6">max-temp</p>
+                        <p id="min-6">min-temp</p>
                     </div>
                 </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
     <div class="buttons">
+<<<<<<< HEAD
 
         <a href="" class="button is-link is-outlined is-medium has-text-centered">Weather</a>
+=======
+>>>>>>> a26001240fb5d905e45b38f8fb3810057e78ac21
         <a href="" class="button is-primary is-outlined is-medium">Ice Cream</a>
-
     </div>
     
     
     <div class="columns is-mobile">
-
-
         <div class="column has-text-primary">
-            Ice Cream #1
+            <i class="fa-solid fa-ice-cream">Ice Cream #1</i>
             <div class="card">
                 <div class="card-content">
                     <div class="content is-small">
@@ -152,7 +125,7 @@
             </div>
         </div>
         <div class="column has-text-primary">
-            Ice Cream #2
+            <i class="fa-solid fa-ice-cream">Ice Cream #2</i>
             <div class="card">
                 <div class="card-content">
                     <div class="content is-small">
@@ -162,7 +135,7 @@
             </div>
         </div>
         <div class="column has-text-primary">
-            Ice Cream #3
+            <i class="fa-solid fa-ice-cream">Ice Cream #3</i>
             <div class="card">
                 <div class="card-content">
                     <div class="content is-small">
@@ -172,7 +145,7 @@
             </div>
         </div>
         <div class="column has-text-primary">
-            Ice Cream #4
+            <i class="fa-solid fa-ice-cream">Ice Cream #4</i>
             <div class="card">
                 <div class="card-content">
                     <div class="content is-small">
@@ -182,7 +155,7 @@
             </div>
         </div>
         <div class="column has-text-primary">
-            Ice Cream #5
+            <i class="fa-solid fa-ice-cream">Ice Cream #5</i>
             <div class="card">
                 <div class="card-content">
                     <div class="content is-small">
@@ -192,15 +165,9 @@
             </div>
         </div>
         </div>
-
-
-
-
-
-        
-
-</div>
+    </div>
+    <script src="./script.js"></script>
 </body>
-
 </html>
+
 
