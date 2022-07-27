@@ -1,15 +1,19 @@
 body {
-    background-color: white;
+    background-color: white  #772014;
 }
-
+.scoop {
+    text-align: center;
+    font-size: x-large;
+}
 
 /* Tablets - header changes color */
 
 @media screen and (max-width: 992px) {
     header {
-        background: #772014;
+        background: hsl(204, 86%, 53%);
     }
 }
+/*test
 
 
 /* Large smartphones - navbar changes color */
