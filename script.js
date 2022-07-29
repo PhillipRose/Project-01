@@ -28,6 +28,7 @@ function init(){
 // tied to clicking the reset button 
 function localReset(){
    localStorage.removeItem('postal_code');
+   inputEl.value = '';
    location.reload();
 };
 
@@ -109,24 +110,16 @@ function getStores(storeApi){
 };
 
 function showWeather(weatherArray) {
+
    for (var i = 0; i <= weatherArray.length; i++){
       console.log(i + ' is the loop count');
       var daySlot = document.getElementById('day-' + i);
       var maxSlot = document.getElementById('max-' + i);
       var minSlot = document.getElementById('min-' + i);
       var days = moment(weatherArray[i].datetime).format('dddd');
-      daySlot.append(days);
-      maxSlot.append(Math.round(weatherArray[i].max_temp));
-      minSlot.append(Math.round(weatherArray[i].min_temp));
+      daySlot.textContent = days;
+      maxSlot.textContent =('High: ' + Math.round(weatherArray[i].max_temp));
+      minSlot.textContent =('Low: ' + Math.round(weatherArray[i].min_temp));
    };
 };
-
-
 init();
-
-// function for reset button to clear the page
-function resetBtn() {
-location.reload();
-}
-
-
