@@ -22,10 +22,18 @@ body {
     height: 100vh;
 }
 
-.columns {
+#weatherCol {
+    visibility: hidden;
+}
+
+#iceCreamCol {
+    visibility: hidden;
+}
+
+#resetBtn {
     visibility: hidden;
 }
 
 .storeBtn {
-    visibility: hidden;
+visibility: hidden;
 }
