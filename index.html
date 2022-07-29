@@ -24,11 +24,12 @@
             <input class="input" type="text" placeholder="Enter Zipcode">
         </div>
     </div>
-    <div class="buttons">
+    <div class="weatherBtn">
         <button onclick="weatherBtn()" class="button is-link is-outlined is-medium">Weather</button>
+        <button id="resetBtn" onclick="localReset()" class="button is-danger is-outlined is-medium"> Try it again!</button>
     </div>
 
-    <div class="columns">
+    <div id="weatherCol" class="columns">
         <div class="column has-text-link">
 
             <i class="fas fa-calendar-alt" id="day-0"></i>
@@ -127,7 +128,7 @@
     </div>
     
     
-    <div class="columns">
+    <div id="iceCreamCol" class="columns">
         <div class="column has-text-primary">
             <i id="name-0" class="fa-solid fa-ice-cream"></i>
             <div class="card">
@@ -179,10 +180,6 @@
             </div>
         </div>
         </div>
-
-          <div>
-            <button onclick="localReset()" class="button is-link is-small"> Try it again!</button>
-          </div>
 
     </div>
     <script src="./script.js"></script>
