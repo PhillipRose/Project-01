@@ -8,190 +8,186 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
-    <script
-    type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
-  ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <title>What's the scoop</title>
 </head>
 
 <body>
-<div class="py-6 px-6 has-background-primary-light">
-    <h1 class="title is-1 has-text-centered has-text-link">What's the scoop?</h1>
-    <h2 class="title is-2 has-text-centered has-text-weight-light has-text-primary">You scream, we scream, we ALL scream for ice cream!</h2>
-    <div class="field has-addons">
-        <div class="control">
-            <input class="input" type="text" placeholder="Enter Zipcode">
+    <div class="py-6 px-6 has-background-primary-light">
+        <h1 class="title is-1 has-text-centered has-text-link">What's the scoop?</h1>
+        <h2 class="title is-2 has-text-centered has-text-weight-light has-text-primary">You scream, we scream, we ALL scream for ice cream!</h2>
+        <div class="field has-addons">
+            <div class="control">
+                <input class="input" type="text" placeholder="Enter Zipcode">
+            </div>
+            <div class="buttons">
+                <button onclick="weatherBtn()" class="button is-link is-outlined is-medium">Weather</button>
+            </div>
+        </div>
+
+        <div class="columns is-mobile">
+            <div class="column has-text-link">
+
+                <i class="fas fa-calendar-alt" id="day-0"></i>
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="content is-medium">
+                            <p id="max-0">High: </p>
+                            <p id="min-0">Low: </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column has-text-link">
+
+                <i class="fas fa-calendar-alt" id="day-1"></i>
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="content is-medium">
+                            <p id="max-1">High: </p>
+                            <p id="min-1">Low: </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column has-text-link">
+
+                <i class="fas fa-calendar-alt" id="day-2"></i>
+
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="content is-medium">
+                            <p id="max-2">High: </p>
+                            <p id="min-2">Low: </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column has-text-link">
+
+                <i class="fas fa-calendar-alt" id="day-3"></i>
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="content is-medium">
+                            <p id="max-3">High: </p>
+                            <p id="min-3">Low: </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column has-text-link">
+
+                <i class="fas fa-calendar-alt" id="day-4"></i>
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="content is-medium">
+                            <p id="max-4">High: </p>
+                            <p id="min-4">Low: </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column has-text-link">
+
+                <i class="fas fa-calendar-alt" id="day-5"></i>
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="content is-medium">
+                            <p id="max-5">High: </p>
+                            <p id="min-5">Low: </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column has-text-link">
+
+                <i class="fas fa-calendar-alt" id="day-6"></i>
+
+                <div class="card">
+                    <div class="card-content">
+                        <div class="content is-medium">
+                            <p id="max-6">High: </p>
+                            <p id="min-6">Low: </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="buttons">
-            <button onclick="weatherBtn()" class="button is-link is-outlined is-medium">Weather</button>
+            <button onclick="storeBtn()" class="button is-primary is-outlined is-medium">Ice Cream</button>
         </div>
-    </div>
 
-    <div class="columns is-mobile">
-        <div class="column has-text-link">
 
-            <i class="fas fa-calendar-alt" id="day-0"></i>
+        <div class="columns is-mobile">
+            <div class="column has-text-primary">
+                <i class="fa-solid fa-ice-cream">Ice Cream #1</i>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="content is-small">
+                            <p id="store-0">store-name</p>
+                            <p id="street-0">location</p>
 
-            <div class="card">
-                <div class="card-content">
-                    <div class="content is-medium">
-                        <p id="max-0">High: </p>
-                        <p id="min-0">Low: </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="column has-text-link">
+            <div class="column has-text-primary">
+                <i class="fa-solid fa-ice-cream">Ice Cream #2</i>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="content is-small">
+                            <p id="store-1">store-name</p>
+                            <p id="street-1">street</p>
 
-            <i class="fas fa-calendar-alt" id="day-1"></i>
-
-            <div class="card">
-                <div class="card-content">
-                    <div class="content is-medium">
-                        <p id="max-1">High: </p>
-                        <p id="min-1">Low: </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="column has-text-link">
+            <div class="column has-text-primary">
+                <i class="fa-solid fa-ice-cream">Ice Cream #3</i>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="content is-small">
+                            <p id="store-2">store-name</p>
+                            <p id="street-2">street</p>
 
-            <i class="fas fa-calendar-alt" id="day-2"></i>
-
-
-            <div class="card">
-                <div class="card-content">
-                    <div class="content is-medium">
-                        <p id="max-2">High: </p>
-                        <p id="min-2">Low: </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="column has-text-link">
+            <div class="column has-text-primary">
+                <i class="fa-solid fa-ice-cream">Ice Cream #4</i>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="content is-small">
+                            <p id="store-3">store-name</p>
+                            <p id="street-3">street</p>
 
-            <i class="fas fa-calendar-alt" id="day-3"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="column has-text-primary">
+                <i class="fa-solid fa-ice-cream">Ice Cream #5</i>
+                <div class="card">
+                    <div class="card-content">
+                        <div class="content is-small">
+                            <p id="store-4">store-name</p>
+                            <p id="street-4">street</p>
 
-            <div class="card">
-                <div class="card-content">
-                    <div class="content is-medium">
-                        <p id="max-3">High: </p>
-                        <p id="min-3">Low: </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="column has-text-link">
-
-            <i class="fas fa-calendar-alt" id="day-4"></i>
-
-            <div class="card">
-                <div class="card-content">
-                    <div class="content is-medium">
-                        <p id="max-4">High: </p>
-                        <p id="min-4">Low: </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column has-text-link">
-
-            <i class="fas fa-calendar-alt" id="day-5"></i>
-
-            <div class="card">
-                <div class="card-content">
-                    <div class="content is-medium">
-                        <p id="max-5">High: </p>
-                        <p id="min-5">Low: </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column has-text-link">
-
-            <i class="fas fa-calendar-alt" id="day-6"></i>
-
-            <div class="card">
-                <div class="card-content">
-                    <div class="content is-medium">
-                        <p id="max-6">High: </p>
-                        <p id="min-6">Low: </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="buttons">
-        <button onclick="storeBtn()" class="button is-primary is-outlined is-medium">Ice Cream</button>
-    </div>
-    
-    
-    <div class="columns is-mobile">
-        <div class="column has-text-primary">
-            <i class="fa-solid fa-ice-cream">Ice Cream #1</i>
-            <div class="card">
-                <div class="card-content">
-                    <div class="content is-small">
-                        <p id="street-0">store-name</p>
-                        <p id="street-0">location</p>
-        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column has-text-primary">
-            <i class="fa-solid fa-ice-cream">Ice Cream #2</i>
-            <div class="card">
-                <div class="card-content">
-                    <div class="content is-small">
-                        <p id="street-1">store-name</p>
-                        <p id="street-1">location</p>
-        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column has-text-primary">
-            <i class="fa-solid fa-ice-cream">Ice Cream #3</i>
-            <div class="card">
-                <div class="card-content">
-                    <div class="content is-small">
-                        <p id="street-2">store-name</p>
-                        <p id="street-2">location</p>
-        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column has-text-primary">
-            <i class="fa-solid fa-ice-cream">Ice Cream #4</i>
-            <div class="card">
-                <div class="card-content">
-                    <div class="content is-small">
-                        <p id="street-3">store-name</p>
-                        <p id="street-3">location</p>
-        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column has-text-primary">
-            <i class="fa-solid fa-ice-cream">Ice Cream #5</i>
-            <div class="card">
-                <div class="card-content">
-                    <div class="content is-small">
-                        <p id="street-4">store-name</p>
-                        <p id="street-4">location</p>
-        
-                    </div>
-                </div>
-            </div>
-        </div>
         </div>
     </div>
     <script src="./script.js"></script>
 </body>
+
 </html>
-
-
