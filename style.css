@@ -37,3 +37,7 @@ body {
 .storeBtn {
 visibility: hidden;
 }
+
+#perfectDay{
+    visibility: hidden;
+}
