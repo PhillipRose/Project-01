@@ -1,6 +1,7 @@
 // make sure both the key const has a key inside the string.
 // html elements saved to variables 
 var inputEl = document.querySelector('input');
+var saveData = localStorage.getItem('postal_code');
 // needed html variables list 
 // weather card class 
 
@@ -16,6 +17,20 @@ const mapKey = '28oyI0GbeI2xfeMfXGihR4g2FOlIRb4p'
     // use these to hold the Lon and Lat values from the weather api for use in Mapquest api
 var apiLon;
 var apiLat;
+
+
+function init() {
+    if (saveData) {
+        weatherBtn(saveData);
+    }
+}
+
+// tied to clicking the reset button 
+function localReset() {
+    localStorage.removeItem('postal_code');
+    location.reload();
+};
+
 // on click for the weather button 
 function weatherBtn() {
     // get input value from user 
@@ -24,6 +39,21 @@ function weatherBtn() {
     var apiUrl = (`https://api.weatherbit.io/v2.0/forecast/daily?postal_code=${inputValue}&days=7&units=I&key=${weatherKey}`);
     // Pass the URL to the fetch function to get the data
     getWeather(apiUrl);
+}
+
+function weatherBtn(localData) {
+    if (localData) {
+        inputValue = localData;
+    } else {
+        inputValue = inputEl.value;
+        localStorage.setItem('postal_code', inputValue);
+    }
+
+
+    var apiUrl = (`https://api.weatherbit.io/v2.0/forecast/daily?postal_code=${inputValue}&days=7&units=I&key=${weatherKey}`);
+    // Pass the URL to the fetch function to get the data
+    getWeather(apiUrl);
+
 
 };
 // on click for the ice cream button takes in the Lon and Lat from weather api. Calls the Mapquest fetch.
@@ -59,6 +89,32 @@ function getWeather(apiUrl) {
                             // console.log(moment(date).format('dddd'));
 
 
+
+                            // This data is for the map api url 
+                            apiLat = Number(data.lat);
+                            apiLon = Number(data.lon);
+                            // storeSearch(apiLon, apiLat);
+
+                            return data;
+                        }
+                    )
+                    .catch(err => console.log(err))
+            }
+        });
+    return weatherData;
+}
+
+function getWeather(apiUrl) {
+    var weatherData = fetch(apiUrl)
+        .then(function(response) {
+            if (response.ok) {
+                var firstResponse = response.json();
+                firstResponse.then(
+                        (data) => {
+                            console.log(data);
+                            // Weather data array to parse with for loops
+                            weatherArray = data.data;
+                            showWeather(weatherArray);
 
                             // This data is for the map api url 
                             apiLat = Number(data.lat);
@@ -131,3 +187,42 @@ function showWeather(weatherArray) {
         minSlot.append(weatherArray[i].min_temp);
     };
 };
+
+function getStores(storeApi) {
+    console.log('getStores is hitting and url is: ' + storeApi);
+    var shopData = fetch(storeApi)
+        .then(function(response) {
+            if (response.ok) {
+                var secondResponse = response.json();
+                secondResponse.then(
+                    (data) => {
+                        console.log(data);
+                        return data;
+                    }
+                )
+            }
+        })
+        .catch(err => console.log(err));
+    return shopData;
+};
+
+function showWeather(weatherArray) {
+    for (var i = 0; i <= weatherArray.length; i++) {
+        console.log(i + ' is the loop count');
+        var daySlot = document.getElementById('day-' + i);
+        var maxSlot = document.getElementById('max-' + i);
+        var minSlot = document.getElementById('min-' + i);
+        var days = moment(weatherArray[i].datetime).format('dddd');
+        daySlot.append(days);
+        maxSlot.append(Math.round(weatherArray[i].max_temp));
+        minSlot.append(Math.round(weatherArray[i].min_temp));
+    };
+};
+
+
+init();
+
+// function for reset button to clear the page
+function resetBtn() {
+    location.reload();
+}

@@ -13,19 +13,19 @@
 </head>
 
 <body>
-    <div class="py-6 px-6 has-background-primary-light">
+    <div id="styling" class="has-background-primary-light">
         <h1 class="title is-1 has-text-centered has-text-link">What's the scoop?</h1>
         <h2 class="title is-2 has-text-centered has-text-weight-light has-text-primary">You scream, we scream, we ALL scream for ice cream!</h2>
         <div class="field has-addons">
             <div class="control">
                 <input class="input" type="text" placeholder="Enter Zipcode">
             </div>
-            <div class="buttons">
-                <button onclick="weatherBtn()" class="button is-link is-outlined is-medium">Weather</button>
-            </div>
+        </div>
+        <div class="buttons">
+            <button onclick="weatherBtn()" class="button is-link is-outlined is-medium">Weather</button>
         </div>
 
-        <div class="columns is-mobile">
+        <div class="columns">
             <div class="column has-text-link">
 
                 <i class="fas fa-calendar-alt" id="day-0"></i>
@@ -119,73 +119,69 @@
                 </div>
             </div>
         </div>
-        <div class="buttons">
-            <button onclick="storeBtn()" class="button is-primary is-outlined is-medium">Ice Cream</button>
-        </div>
+    </div>
+    <div class="buttons">
+        <button onclick="storeBtn()" class="button is-primary is-outlined is-medium">Ice Cream</button>
+    </div>
 
 
-        <div class="columns is-mobile">
-            <div class="column has-text-primary">
-                <i class="fa-solid fa-ice-cream">Ice Cream #1</i>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="content is-small">
-                            <p id="store-0">store-name</p>
-                            <p id="street-0">location</p>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column has-text-primary">
-                <i class="fa-solid fa-ice-cream">Ice Cream #2</i>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="content is-small">
-                            <p id="store-1">store-name</p>
-                            <p id="street-1">street</p>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column has-text-primary">
-                <i class="fa-solid fa-ice-cream">Ice Cream #3</i>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="content is-small">
-                            <p id="store-2">store-name</p>
-                            <p id="street-2">street</p>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column has-text-primary">
-                <i class="fa-solid fa-ice-cream">Ice Cream #4</i>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="content is-small">
-                            <p id="store-3">store-name</p>
-                            <p id="street-3">street</p>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column has-text-primary">
-                <i class="fa-solid fa-ice-cream">Ice Cream #5</i>
-                <div class="card">
-                    <div class="card-content">
-                        <div class="content is-small">
-                            <p id="store-4">store-name</p>
-                            <p id="street-4">street</p>
-
-                        </div>
+    <div class="columns">
+        <div class="column has-text-primary">
+            <i id="name-0" class="fa-solid fa-ice-cream"></i>
+            <div class="card">
+                <div class="card-content">
+                    <div class="content is-small">
+                        <p id="street-0">location</p>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="column has-text-primary">
+            <i id="name-1" class="fa-solid fa-ice-cream"></i>
+            <div class="card">
+                <div class="card-content">
+                    <div class="content is-small">
+                        <p id="street-1">location</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column has-text-primary">
+            <i id="name-2" class="fa-solid fa-ice-cream"></i>
+            <div class="card">
+                <div class="card-content">
+                    <div class="content is-small">
+                        <p id="street-2">location</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column has-text-primary">
+            <i id="name-3" class="fa-solid fa-ice-cream"></i>
+            <div class="card">
+                <div class="card-content">
+                    <div class="content is-small">
+                        <p id="street-3">location</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column has-text-primary">
+            <i id="name-4" class="fa-solid fa-ice-cream"></i>
+            <div class="card">
+                <div class="card-content">
+                    <div class="content is-small">
+                        <p id="street-4">location</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <button onclick="resetBtn()" class="button is-link is-small"> Try it again!</button>
+    </div>
+
     </div>
     <script src="./script.js"></script>
 </body>
