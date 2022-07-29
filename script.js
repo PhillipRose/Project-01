@@ -121,4 +121,12 @@ function showWeather(weatherArray) {
    };
 };
 
+
 init();
+
+// function for reset button to clear the page
+function resetBtn() {
+location.reload();
+}
+
+
