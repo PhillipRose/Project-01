@@ -21,7 +21,7 @@ function weatherBtn(){
    // get input value from user 
    inputValue = inputEl.value;
    // add that value to the URL with correct syntax 
-   var apiUrl = (`https://api.weatherbit.io/v2.0/forecast/daily?postal_code=${inputValue}&days=5&units=I&key=${weatherKey}`);
+   var apiUrl = (`https://api.weatherbit.io/v2.0/forecast/daily?postal_code=${inputValue}&days=7&units=I&key=${weatherKey}`);
    // Pass the URL to the fetch function to get the data
    getWeather(apiUrl);   
  
@@ -52,9 +52,9 @@ function getWeather(apiUrl){
             // deal with all the weather data inside here
             // call functions and pass them any needed data here
 
-            // day of the week data to parse with momentJS
-            date = data.data;
-            showDay(date);
+            // Weather data array to parse with for loops
+            weatherArray = data.data;
+            showWeather(weatherArray);
             // console.log('This is the date:  ' + date);
             // console.log(moment(date).format('dddd'));
 
@@ -106,15 +106,17 @@ function getStores(storeApi){
 // var value = data.data[i].max_temp;
 // card.append(value);
 
-function showDay(date) {
-   for (var i =0; i <= 5; i++){
-      console.log(i);
-      var daySlot = document.getElementById('day-' + i)
-      var days = moment(date[i].datetime).format('dddd');
+function showWeather(weatherArray) {
+   for (var i = 0; i <= weatherArray.length; i++){
+      console.log(i + ' is the loop count');
+      var daySlot = document.getElementById('day-' + i);
+      var maxSlot = document.getElementById('max-' + i);
+      var minSlot = document.getElementById('min-' + i);
+      var days = moment(weatherArray[i].datetime).format('dddd');
       daySlot.append(days);
-      console.log(days + ' is the day');
-
-   }
-}
+      maxSlot.append(weatherArray[i].max_temp);
+      minSlot.append(weatherArray[i].min_temp);
+   };
+};
 
 
