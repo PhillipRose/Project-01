@@ -73,11 +73,10 @@ function getWeather(apiUrl){
             console.log(data);
             // Weather data array to parse with for loops
             weatherArray = data.data;
-            showWeather(weatherArray);
+            showWeather(weatherArray, data);
  
             // This data is for the map api url 
-            apiLat = Number(data.lat);
-            apiLon = Number(data.lon); 
+            
             // storeSearch(apiLon, apiLat);
 
             return data;            
@@ -109,7 +108,7 @@ function getStores(storeApi){
       return shopData;
 };
 
-function showWeather(weatherArray) {
+function showWeather(weatherArray, data) {
 
    for (var i = 0; i <= weatherArray.length; i++){
       console.log(i + ' is the loop count');
@@ -121,5 +120,7 @@ function showWeather(weatherArray) {
       maxSlot.textContent =('High: ' + Math.round(weatherArray[i].max_temp));
       minSlot.textContent =('Low: ' + Math.round(weatherArray[i].min_temp));
    };
+   apiLat = Number(data.lat);
+   apiLon = Number(data.lon);
 };
 init();
