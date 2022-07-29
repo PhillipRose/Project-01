@@ -24,114 +24,119 @@
         <div class="buttons">
             <button onclick="weatherBtn()" class="button is-link is-outlined is-medium">Weather</button>
         </div>
+    </div>
+    <div class="weatherBtn">
+        <button onclick="weatherBtn()" class="button is-link is-outlined is-medium">Weather</button>
+        <button id="resetBtn" onclick="localReset()" class="button is-danger is-outlined is-medium"> Try it again!</button>
+    </div>
 
-        <div class="columns">
-            <div class="column has-text-link">
+    <div id="weatherCol" class="columns">
+        <div class="column has-text-link">
 
-                <i class="fas fa-calendar-alt" id="day-0"></i>
+            <i class="fas fa-calendar-alt" id="day-0"></i>
 
-                <div class="card">
-                    <div class="card-content">
-                        <div class="content is-medium">
-                            <p id="max-0">High: </p>
-                            <p id="min-0">Low: </p>
-                        </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="content is-medium">
+                        <p id="max-0">High: </p>
+                        <p id="min-0">Low: </p>
                     </div>
                 </div>
             </div>
-            <div class="column has-text-link">
+        </div>
+        <div class="column has-text-link">
 
-                <i class="fas fa-calendar-alt" id="day-1"></i>
+            <i class="fas fa-calendar-alt" id="day-1"></i>
 
-                <div class="card">
-                    <div class="card-content">
-                        <div class="content is-medium">
-                            <p id="max-1">High: </p>
-                            <p id="min-1">Low: </p>
-                        </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="content is-medium">
+                        <p id="max-1">High: </p>
+                        <p id="min-1">Low: </p>
                     </div>
                 </div>
             </div>
-            <div class="column has-text-link">
+        </div>
+        <div class="column has-text-link">
 
-                <i class="fas fa-calendar-alt" id="day-2"></i>
+            <i class="fas fa-calendar-alt" id="day-2"></i>
 
 
-                <div class="card">
-                    <div class="card-content">
-                        <div class="content is-medium">
-                            <p id="max-2">High: </p>
-                            <p id="min-2">Low: </p>
-                        </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="content is-medium">
+                        <p id="max-2">High: </p>
+                        <p id="min-2">Low: </p>
                     </div>
                 </div>
             </div>
-            <div class="column has-text-link">
+        </div>
+        <div class="column has-text-link">
 
-                <i class="fas fa-calendar-alt" id="day-3"></i>
+            <i class="fas fa-calendar-alt" id="day-3"></i>
 
-                <div class="card">
-                    <div class="card-content">
-                        <div class="content is-medium">
-                            <p id="max-3">High: </p>
-                            <p id="min-3">Low: </p>
-                        </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="content is-medium">
+                        <p id="max-3">High: </p>
+                        <p id="min-3">Low: </p>
                     </div>
                 </div>
             </div>
-            <div class="column has-text-link">
+        </div>
+        <div class="column has-text-link">
 
-                <i class="fas fa-calendar-alt" id="day-4"></i>
+            <i class="fas fa-calendar-alt" id="day-4"></i>
 
-                <div class="card">
-                    <div class="card-content">
-                        <div class="content is-medium">
-                            <p id="max-4">High: </p>
-                            <p id="min-4">Low: </p>
-                        </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="content is-medium">
+                        <p id="max-4">High: </p>
+                        <p id="min-4">Low: </p>
                     </div>
                 </div>
             </div>
-            <div class="column has-text-link">
+        </div>
+        <div class="column has-text-link">
 
-                <i class="fas fa-calendar-alt" id="day-5"></i>
+            <i class="fas fa-calendar-alt" id="day-5"></i>
 
-                <div class="card">
-                    <div class="card-content">
-                        <div class="content is-medium">
-                            <p id="max-5">High: </p>
-                            <p id="min-5">Low: </p>
-                        </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="content is-medium">
+                        <p id="max-5">High: </p>
+                        <p id="min-5">Low: </p>
                     </div>
                 </div>
             </div>
-            <div class="column has-text-link">
+        </div>
+        <div class="column has-text-link">
 
-                <i class="fas fa-calendar-alt" id="day-6"></i>
+            <i class="fas fa-calendar-alt" id="day-6"></i>
 
-                <div class="card">
-                    <div class="card-content">
-                        <div class="content is-medium">
-                            <p id="max-6">High: </p>
-                            <p id="min-6">Low: </p>
-                        </div>
+            <div class="card">
+                <div class="card-content">
+                    <div class="content is-medium">
+                        <p id="max-6">High: </p>
+                        <p id="min-6">Low: </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="buttons">
+    </div>
+    <div class="storeBtn">
         <button onclick="storeBtn()" class="button is-primary is-outlined is-medium">Ice Cream</button>
     </div>
 
 
-    <div class="columns">
+    <div id="iceCreamCol" class="columns">
         <div class="column has-text-primary">
             <i id="name-0" class="fa-solid fa-ice-cream"></i>
             <div class="card">
                 <div class="card-content">
                     <div class="content is-small">
-                        <p id="street-0">location</p>
+                        <p id="street-0"></p>
                     </div>
                 </div>
             </div>
@@ -141,7 +146,7 @@
             <div class="card">
                 <div class="card-content">
                     <div class="content is-small">
-                        <p id="street-1">location</p>
+                        <p id="street-1"></p>
                     </div>
                 </div>
             </div>
@@ -151,7 +156,7 @@
             <div class="card">
                 <div class="card-content">
                     <div class="content is-small">
-                        <p id="street-2">location</p>
+                        <p id="street-2"></p>
                     </div>
                 </div>
             </div>
@@ -161,7 +166,7 @@
             <div class="card">
                 <div class="card-content">
                     <div class="content is-small">
-                        <p id="street-3">location</p>
+                        <p id="street-3"></p>
                     </div>
                 </div>
             </div>
@@ -171,15 +176,11 @@
             <div class="card">
                 <div class="card-content">
                     <div class="content is-small">
-                        <p id="street-4">location</p>
+                        <p id="street-4"></p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div>
-        <button onclick="resetBtn()" class="button is-link is-small"> Try it again!</button>
     </div>
 
     </div>

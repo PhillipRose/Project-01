@@ -21,3 +21,19 @@ body {
 #styling {
     height: 100vh;
 }
+
+#weatherCol {
+    visibility: hidden;
+}
+
+#iceCreamCol {
+    visibility: hidden;
+}
+
+#resetBtn {
+    visibility: hidden;
+}
+
+.storeBtn {
+visibility: hidden;
+}
