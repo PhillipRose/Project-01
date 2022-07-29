@@ -18,25 +18,32 @@ body {
     font-size: 25px;
 }
 
+/* adds background color full view height of page*/
 #styling {
     height: 100vh;
 }
 
-/* #weatherCol {
+/* makes the column that displays the weather hidden*/
+#weatherCol {
     visibility: hidden;
 }
 
+/* makes the column that displays the Ice Cream stores hidden*/
 #iceCreamCol {
     visibility: hidden;
 }
 
+/* makes the reset button that resets the weather hidden*/
 #resetBtn {
     visibility: hidden;
 }
 
+/* makes the store button hidden*/
 .storeBtn {
 visibility: hidden;
+}
 
+/* makes the text within this div hidden*/
 #perfectDay{
     visibility: hidden;
-
+}
