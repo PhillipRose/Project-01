@@ -33,6 +33,34 @@ function localReset() {
 };
 
 // on click for the weather button 
+
+function weatherBtn(localData){
+   if (localData){
+      inputValue = localData;
+   } else {
+      inputValue = inputEl.value;
+      localStorage.setItem('postal_code', inputValue);
+   }
+   
+
+   var apiUrl = (`https://api.weatherbit.io/v2.0/forecast/daily?postal_code=${inputValue}&days=7&units=I&key=${weatherKey}`);
+   getWeather(apiUrl);
+     
+ 
+};
+function storeBtn(){
+   // console.log(apiLon)
+   // console.log(apiLat)
+   // debugger
+   storeSearch(apiLon, apiLat);
+}
+
+
+function storeSearch(apiLon, apiLat){   
+   storeApi = `https://www.mapquestapi.com/search/v4/place?location=${apiLon}%2C%20${apiLat}&sort=distance&feedback=false&key=${mapKey}&pageSize=5&q=ice%20cream`;   
+   // console.log(storeApi);
+   getStores(storeApi);
+   }
 function weatherBtn() {
     // get input value from user 
     inputValue = inputEl.value;
@@ -72,10 +100,29 @@ function storeSearch(apiLon, apiLat) {
     console.log(storeApi);
 
     getStores(storeApi);
+
 }
 
 
 // WORKING FETCH FOR WEATHER API
+
+function getWeather(apiUrl){
+    var weatherData =  fetch(apiUrl)
+     .then(function (response){
+      if (response.ok){      
+        var firstResponse = response.json();
+        firstResponse.then(
+         (data) => {
+            // console.log(data);
+            weatherArray = data.data;
+            showWeather(weatherArray, data);
+            return data;            
+         }
+         )
+         .catch(err => console.log(err))
+     }});
+     return weatherData;
+
 function getWeather(apiUrl) {
     var weatherData = fetch(apiUrl)
         .then(function(response) {
@@ -132,6 +179,7 @@ function getWeather(apiUrl) {
             }
         });
     return weatherData;
+
 };
 
 
@@ -223,17 +271,22 @@ function getStores(storeApi) {
     return shopData;
 };
 
-function showWeather(weatherArray) {
+function showWeather(weatherArray, data) {
+   console.log(data);
 
-    for (var i = 0; i <= weatherArray.length; i++) {
-        console.log(i + ' is the loop count');
-        var daySlot = document.getElementById('day-' + i);
-        var maxSlot = document.getElementById('max-' + i);
-        var minSlot = document.getElementById('min-' + i);
-        var days = moment(weatherArray[i].datetime).format('dddd');
-        daySlot.textContent = days;
-        maxSlot.textContent = ('High: ' + Math.round(weatherArray[i].max_temp));
-        minSlot.textContent = ('Low: ' + Math.round(weatherArray[i].min_temp));
-    };
+   for (var i = 0; i < weatherArray.length; i++){
+      console.log(i + ' is the loop count');
+      console.log(weatherArray[i]);
+      var daySlot = document.getElementById('day-' + i);
+      var maxSlot = document.getElementById('max-' + i);
+      var minSlot = document.getElementById('min-' + i);
+      var days = moment(weatherArray[i].datetime).format('dddd');
+      daySlot.textContent = days;
+      maxSlot.textContent =('High: ' + Math.round(weatherArray[i].max_temp));
+      minSlot.textContent =('Low: ' + Math.round(weatherArray[i].min_temp));
+   };
+   apiLat = Number(data.lat);
+   apiLon = Number(data.lon);
+
 };
 init();
