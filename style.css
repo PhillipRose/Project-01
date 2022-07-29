@@ -23,9 +23,11 @@ body {
     height: 100vh;
 }
 
+
 /* makes the column that displays the weather hidden*/
 #weatherCol {
     visibility: hidden;
+
 }
 
 /* makes the column that displays the Ice Cream stores hidden*/
@@ -46,4 +48,5 @@ visibility: hidden;
 /* makes the text within this div hidden*/
 #perfectDay{
     visibility: hidden;
+
 }
