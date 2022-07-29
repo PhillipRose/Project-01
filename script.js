@@ -43,21 +43,21 @@ function weatherBtn(localData){
    
 
    var apiUrl = (`https://api.weatherbit.io/v2.0/forecast/daily?postal_code=${inputValue}&days=7&units=I&key=${weatherKey}`);
-   // Pass the URL to the fetch function to get the data
    getWeather(apiUrl);
      
  
 };
-// on click for the ice cream button takes in the Lon and Lat from weather api. Calls the Mapquest fetch.
 function storeBtn(){
-   getStores(storeApi);
+   // console.log(apiLon)
+   // console.log(apiLat)
+   // debugger
+   storeSearch(apiLon, apiLat);
 }
 
 
 function storeSearch(apiLon, apiLat){   
    storeApi = `https://www.mapquestapi.com/search/v4/place?location=${apiLon}%2C%20${apiLat}&sort=distance&feedback=false&key=${mapKey}&pageSize=5&q=ice%20cream`;   
-   console.log(storeApi);
-   // debugger;
+   // console.log(storeApi);
    getStores(storeApi);
 }
 
@@ -70,15 +70,9 @@ function getWeather(apiUrl){
         var firstResponse = response.json();
         firstResponse.then(
          (data) => {
-            console.log(data);
-            // Weather data array to parse with for loops
+            // console.log(data);
             weatherArray = data.data;
             showWeather(weatherArray, data);
- 
-            // This data is for the map api url 
-            
-            // storeSearch(apiLon, apiLat);
-
             return data;            
          }
          )
@@ -109,9 +103,11 @@ function getStores(storeApi){
 };
 
 function showWeather(weatherArray, data) {
+   console.log(data);
 
-   for (var i = 0; i <= weatherArray.length; i++){
+   for (var i = 0; i < weatherArray.length; i++){
       console.log(i + ' is the loop count');
+      console.log(weatherArray[i]);
       var daySlot = document.getElementById('day-' + i);
       var maxSlot = document.getElementById('max-' + i);
       var minSlot = document.getElementById('min-' + i);
