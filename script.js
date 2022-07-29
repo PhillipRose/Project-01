@@ -1,6 +1,7 @@
 // make sure both the key const has a key inside the string.
 // html elements saved to variables 
 var inputEl = document.querySelector('input');
+var saveData = localStorage.getItem('postal_code');
 // needed html variables list 
    // weather card class 
 
@@ -16,14 +17,34 @@ const mapKey = '28oyI0GbeI2xfeMfXGihR4g2FOlIRb4p'
 // use these to hold the Lon and Lat values from the weather api for use in Mapquest api
 var apiLon; 
 var apiLat;
+
+
+function init(){
+   if (saveData){
+      weatherBtn(saveData);
+   }
+}
+
+// tied to clicking the reset button 
+function localReset(){
+   localStorage.removeItem('postal_code');
+   location.reload();
+};
+
 // on click for the weather button 
-function weatherBtn(){
-   // get input value from user 
-   inputValue = inputEl.value;
-   // add that value to the URL with correct syntax 
+function weatherBtn(localData){
+   if (localData){
+      inputValue = localData;
+   } else {
+      inputValue = inputEl.value;
+      localStorage.setItem('postal_code', inputValue);
+   }
+   
+
    var apiUrl = (`https://api.weatherbit.io/v2.0/forecast/daily?postal_code=${inputValue}&days=7&units=I&key=${weatherKey}`);
    // Pass the URL to the fetch function to get the data
-   getWeather(apiUrl);   
+   getWeather(apiUrl);
+     
  
 };
 // on click for the ice cream button takes in the Lon and Lat from weather api. Calls the Mapquest fetch.
@@ -49,17 +70,10 @@ function getWeather(apiUrl){
         firstResponse.then(
          (data) => {
             console.log(data);
-            // deal with all the weather data inside here
-            // call functions and pass them any needed data here
-
             // Weather data array to parse with for loops
             weatherArray = data.data;
             showWeather(weatherArray);
-            // console.log('This is the date:  ' + date);
-            // console.log(moment(date).format('dddd'));
-
-
-
+ 
             // This data is for the map api url 
             apiLat = Number(data.lat);
             apiLon = Number(data.lon); 
@@ -84,8 +98,6 @@ function getStores(storeApi){
        var secondResponse = response.json();
        secondResponse.then(
          (data) => {
-            // deal with all the map data here 
-            // call any needed functions and pass them the data from here 
             console.log(data);
             return data;
          }
@@ -96,16 +108,6 @@ function getStores(storeApi){
       return shopData;
 };
 
-// var title = document.createElement('<p>')
-// var street = document.createElement('<p>')
-
-// title.append(data)
-// street.append(data);
-
-// var card = document.getElementById("max-" + i)
-// var value = data.data[i].max_temp;
-// card.append(value);
-
 function showWeather(weatherArray) {
    for (var i = 0; i <= weatherArray.length; i++){
       console.log(i + ' is the loop count');
@@ -114,13 +116,17 @@ function showWeather(weatherArray) {
       var minSlot = document.getElementById('min-' + i);
       var days = moment(weatherArray[i].datetime).format('dddd');
       daySlot.append(days);
-      maxSlot.append(weatherArray[i].max_temp);
-      minSlot.append(weatherArray[i].min_temp);
+      maxSlot.append(Math.round(weatherArray[i].max_temp));
+      minSlot.append(Math.round(weatherArray[i].min_temp));
    };
 };
+
+
+init();
 
 // function for reset button to clear the page
 function resetBtn() {
 location.reload();
 }
+
 
