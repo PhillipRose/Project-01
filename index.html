@@ -8,20 +8,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
-    <script
-    type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
-  ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <title>What's the scoop</title>
 </head>
 
 <body>
-<div id="styling" class="has-background-primary-light">
-    <h1 class="title is-1 has-text-centered has-text-link">What's the scoop?</h1>
-    <h2 class="title is-2 has-text-centered has-text-weight-light has-text-primary">You scream, we scream, we ALL scream for ice cream!</h2>
-    <div class="field has-addons">
-        <div class="control">
-            <input class="input" type="text" placeholder="Enter Zipcode">
+    <div id="styling" class="has-background-primary-light">
+        <h1 class="title is-1 has-text-centered has-text-link">What's the scoop?</h1>
+        <h2 class="title is-2 has-text-centered has-text-weight-light has-text-primary">You scream, we scream, we ALL scream for ice cream!</h2>
+        <div class="field has-addons">
+            <div class="control">
+                <input class="input" type="text" placeholder="Enter Zipcode">
+            </div>
+        </div>
+        <div class="buttons">
+            <button onclick="weatherBtn()" class="button is-link is-outlined is-medium">Weather</button>
         </div>
     </div>
     <div class="weatherBtn">
@@ -123,11 +124,12 @@
             </div>
         </div>
     </div>
+    </div>
     <div class="storeBtn">
         <button onclick="storeBtn()" class="button is-primary is-outlined is-medium">Ice Cream</button>
     </div>
-    
-    
+
+
     <div id="iceCreamCol" class="columns">
         <div class="column has-text-primary">
             <i id="name-0" class="fa-solid fa-ice-cream"></i>
@@ -179,11 +181,10 @@
                 </div>
             </div>
         </div>
-        </div>
+    </div>
 
     </div>
     <script src="./script.js"></script>
 </body>
+
 </html>
-
-
