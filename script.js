@@ -1,5 +1,3 @@
-var inputEl = document.querySelector('input');
-var saveData = localStorage.getItem('postal_code');
 // e4d3b96206444e95a9c7ce98d06c55b0
 const weatherKey = `e4d3b96206444e95a9c7ce98d06c55b0`
     // mapKey is: 28oyI0GbeI2xfeMfXGihR4g2FOlIRb4
@@ -8,6 +6,7 @@ var apiLon;
 var apiLat;
 
 function init() {
+    var saveData = localStorage.getItem('postal_code');
     if (saveData) {
         weatherBtn(saveData);
     }
@@ -30,24 +29,16 @@ function storeSearch(apiLon, apiLat){
    }
 
 function weatherBtn(localData) {
+    var inputEl = document.querySelector('input');
     if (localData) {
         inputValue = localData;
     } else {
         inputValue = inputEl.value;
         localStorage.setItem('postal_code', inputValue);
     }
-
     var apiUrl = (`https://api.weatherbit.io/v2.0/forecast/daily?postal_code=${inputValue}&days=7&units=I&key=${weatherKey}`);
     getWeather(apiUrl);
 };
-
-function storeSearch(apiLon, apiLat) {
-    var storeApi = `https://www.mapquestapi.com/search/v4/place?location=${apiLon}%2C%20${apiLat}&sort=distance&feedback=false&key=${mapKey}&pageSize=5&q=ice%20cream`;
-    console.log(storeApi);
-
-    getStores(storeApi);
-
-}
 
 function getWeather(apiUrl){
     var weatherData =  fetch(apiUrl)
@@ -57,25 +48,22 @@ function getWeather(apiUrl){
         firstResponse.then(
          (data) => {
             // console.log(data);
-            weatherArray = data.data;
-            showWeather(weatherArray, data);
+            weatherArr = data.data;
+            showWeather(weatherArr, data);
             return data;            
-         }
-         )
+         })
          .catch(err => console.log(err))
      }});
      return weatherData;
 };
 
-function showStores(storeArray) {
-    for (var i = 0; i <= storeArray.length; i++) {
+function showStores(storeArr) {
+    for (var i = 0; i < storeArr.length; i++) {
         console.log(i + ' loop count');
         var storeName = document.getElementById('name-' + i);
-        var street = document.getElementById('street-' + i);
-        storeName.append(storeArray[i].results.name);
-        street.append(storeArray[i].results.street);
-
-
+        var location = document.getElementById('street-' + i);
+        storeName.append(storeArr[i].name);
+        location.append(storeArr[i].place.properties.street);
     };
 };
 
@@ -87,7 +75,8 @@ function getStores(storeApi) {
                 var secondResponse = response.json();
                 secondResponse.then(
                     (data) => {
-                        console.log(data);
+                        storeArr = data.results;
+                        showStores(storeArr);
                         return data;
                     }
                 )
@@ -97,17 +86,17 @@ function getStores(storeApi) {
     return shopData;
 };
 
-function showWeather(weatherArray, data) {
-   for (var i = 0; i < weatherArray.length; i++){
+function showWeather(weatherArr, data) {
+   for (var i = 0; i < weatherArr.length; i++){
       console.log(i + ' is the loop count');
-      console.log(weatherArray[i]);
+      console.log(weatherArr[i]);
       var daySlot = document.getElementById('day-' + i);
       var maxSlot = document.getElementById('max-' + i);
       var minSlot = document.getElementById('min-' + i);
-      var days = moment(weatherArray[i].datetime).format('dddd');
+      var days = moment(weatherArr[i].datetime).format('dddd');
       daySlot.textContent = days;
-      maxSlot.textContent =('High: ' + Math.round(weatherArray[i].max_temp));
-      minSlot.textContent =('Low: ' + Math.round(weatherArray[i].min_temp));
+      maxSlot.textContent =('High: ' + Math.round(weatherArr[i].max_temp));
+      minSlot.textContent =('Low: ' + Math.round(weatherArr[i].min_temp));
    };
    apiLat = Number(data.lat);
    apiLon = Number(data.lon);
