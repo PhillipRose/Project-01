@@ -26,27 +26,27 @@ body {
 
 /* makes the column that displays the weather hidden*/
 #weatherCol {
-    visibility: hidden;
+    display: none;
 
 }
 
 /* makes the column that displays the Ice Cream stores hidden*/
 #iceCreamCol {
-    visibility: hidden;
+    display: none;
 }
 
 /* makes the reset button that resets the weather hidden*/
 #resetBtn {
-    visibility: hidden;
+    display: none;
 }
 
 /* makes the store button hidden*/
 .storeBtn {
-visibility: hidden;
+    display: none;
 }
 
 /* makes the text within this div hidden*/
 #perfectDay{
-    visibility: hidden;
+    display: none;
 
 }
