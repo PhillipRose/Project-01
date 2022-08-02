@@ -5,10 +5,14 @@ const mapKey = '28oyI0GbeI2xfeMfXGihR4g2FOlIRb4p';
 var inputEl = document.querySelector('input');
 var apiLon;
 var apiLat;
+
 var iceCreamCollum = document.getElementById("iceCreamCol");
 var weatherCollum = document.getElementById("weatherCol");
 var resetBtn = document.getElementById("resetBtn");
 var icecreamBtn = document.querySelector(".storeBtn");
+
+
+//  starts 
 
 function init() {
     var saveData = localStorage.getItem('postal_code');
@@ -25,7 +29,9 @@ function localReset() {
 
 function storeBtn() {
     storeSearch(apiLon, apiLat);
+
     iceCreamCollum.style.display = "flex";
+
 }
 
 function storeSearch(apiLon, apiLat) {

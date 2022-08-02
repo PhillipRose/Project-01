@@ -1,3 +1,4 @@
+
 body {
     background-color: #772014;
 }
@@ -17,6 +18,7 @@ body {
 .backbtn {
     font-size: 25px;
 }
+
 
 
 /* adds background color full view height of page*/
@@ -43,8 +45,13 @@ body {
 /* makes the reset button that resets the weather hidden*/
 
 #resetBtn {
+
     display: flex;
 }
+    display: none;
+    }
+
+
 
 
 /* makes the store button hidden*/
@@ -53,4 +60,3 @@ body {
     display: none;
 }
 
-;
