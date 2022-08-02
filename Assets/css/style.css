@@ -18,29 +18,39 @@ body {
     font-size: 25px;
 }
 
+
 /* adds background color full view height of page*/
+
 #styling {
     height: 100vh;
 }
 
 
 /* makes the column that displays the weather hidden*/
+
 #weatherCol {
     display: none;
-
 }
 
+
 /* makes the column that displays the Ice Cream stores hidden*/
+
 #iceCreamCol {
     display: none;
 }
 
+
 /* makes the reset button that resets the weather hidden*/
+
 #resetBtn {
+    display: flex;
+}
+
+
+/* makes the store button hidden*/
+
+.storeBtn {
     display: none;
 }
 
-/* makes the store button hidden*/
-.storeBtn {
-    display: none;
-};
+;
