@@ -1,10 +1,13 @@
+/*adds image to the whole background of page*/
+body{
+    background-image: url(https://s3.amazonaws.com/spoonflower/public/design_thumbnails/0547/3461/rrice_cream_sprinkles_pattern_mint_shop_thumb.png);
+
 
 /* adds background color full view height of page*/
 
 #styling {
     height: 100vh;
 }
-
 
 /* makes the column that displays the weather hidden*/
 

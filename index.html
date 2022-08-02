@@ -15,7 +15,7 @@
 <body id="styling" class="px-6 px-y has-background-primary-light">
     <div>
         <h1 class="title is-1 has-text-centered has-text-link">What's the scoop?</h1>
-        <h2 class="title is-2 has-text-centered has-text-weight-light has-text-primary">You scream, we scream, we ALL scream for ice cream!</h2>
+        <h2 class="title is-1 has-text-centered has-text-weight-light has-text-danger">You scream, we scream, we ALL scream for ice cream!</h2>
         <div class="field has-addons">
             <div class="control">
                 <input class="input" type="text" placeholder="Enter Zipcode">
@@ -23,8 +23,10 @@
         </div>
     </div>
     <div class="weatherBtn">
+
         <button onclick="weatherBtn();" class="button is-link is-outlined is-medium">Weather</button>
         <button id="resetBtn" onclick="resetBtn();" class="button is-danger is-outlined is-medium"> Try it again!</button>
+
     </div>
 
     <div id="weatherCol" class="columns">
@@ -122,55 +124,61 @@
         </div>
     </div>
     </div>
+
+    <div class="storeBtn">
+        <button onclick="storeBtn()" class="button is-primary is-medium">Ice Cream</button>
+
     <div class="storeBtn" id="storeBtn">
+
         <button onclick="storeBtn()" class="button is-primary is-outlined is-medium" id="store-btn">Ice Cream</button>
+
     </div>
 
     <div id="iceCreamCol" class="columns">
-        <div class="column has-text-primary">
+        <div class="column has-text-danger">
             <i id="name-0" class="fa-solid fa-ice-cream"></i>
             <div class="card">
-                <div class="card-content">
+                <div id="backGround-Img" class="card-content">
                     <div class="content is-small">
                         <p id="street-0"></p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="column has-text-primary">
+        <div class="column has-text-danger">
             <i id="name-1" class="fa-solid fa-ice-cream"></i>
             <div class="card">
-                <div class="card-content">
+                <div id="backGround-Img1" class="card-content">
                     <div class="content is-small">
                         <p id="street-1"></p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="column has-text-primary">
+        <div class="column has-text-danger">
             <i id="name-2" class="fa-solid fa-ice-cream"></i>
             <div class="card">
-                <div class="card-content">
+                <div id="backGround-Img2" class="card-content">
                     <div class="content is-small">
                         <p id="street-2"></p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="column has-text-primary">
+        <div class="column has-text-danger">
             <i id="name-3" class="fa-solid fa-ice-cream"></i>
             <div class="card">
-                <div class="card-content">
+                <div id="backGround-Img3" class="card-content">
                     <div class="content is-small">
                         <p id="street-3"></p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="column has-text-primary">
+        <div class="column has-text-danger">
             <i id="name-4" class="fa-solid fa-ice-cream"></i>
             <div class="card">
-                <div class="card-content">
+                <div id="backGround-Img4" class="card-content">
                     <div class="content is-small">
                         <p id="street-4"></p>
                     </div>
