@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <link rel="stylesheet" href="./Assets/css/style.css">
-    <title>What's the scoop</title>
+    <title>What's The Scoop</title>
 </head>
 
-<body id="styling" class="has-background-primary-light">
+<body id="styling" class="px-6 px-y has-background-primary-light">
     <div>
         <h1 class="title is-1 has-text-centered has-text-link">What's the scoop?</h1>
         <h2 class="title is-1 has-text-centered has-text-weight-light has-text-danger">You scream, we scream, we ALL scream for ice cream!</h2>
@@ -23,8 +23,11 @@
         </div>
     </div>
     <div class="weatherBtn">
+
         <button onclick="weatherBtn()" class="button is-link is-medium">Weather</button>
         <button id="resetBtn" onclick="localReset()" class="button is-danger is-medium"> Try it again!</button>
+        <button onclick="weatherBtn()" class="button is-link is-outlined is-medium">Weather</button>
+        <button id="resetBtn" onclick="resetBtn()" class="button is-danger is-outlined is-medium"> Try it again!</button>
     </div>
 
     <div id="weatherCol" class="columns">
@@ -122,8 +125,13 @@
         </div>
     </div>
     </div>
+
     <div class="storeBtn">
         <button onclick="storeBtn()" class="button is-primary is-medium">Ice Cream</button>
+
+    <div class="storeBtn" id="storeBtn">
+        <button onclick="storeBtn()" class="button is-primary is-outlined is-medium">Ice Cream</button>
+
     </div>
 
     <div id="iceCreamCol" class="columns">
