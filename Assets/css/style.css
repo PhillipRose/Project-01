@@ -1,3 +1,26 @@
+
+body {
+    background-color: #772014;
+}
+
+.scoop {
+    text-align: center;
+    font-size: x-large;
+}
+
+.iceBody {
+    background-image: url("icecream1.jpg");
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.backbtn {
+    font-size: 25px;
+}
+
+
+
 /* adds background color full view height of page*/
 
 #styling {
@@ -22,8 +45,13 @@
 /* makes the reset button that resets the weather hidden*/
 
 #resetBtn {
+
+    display: flex;
+}
     display: none;
     }
+
+
 
 
 /* makes the store button hidden*/
