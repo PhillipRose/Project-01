@@ -1,22 +1,5 @@
-body {
+body{
     background-image: url(https://s3.amazonaws.com/spoonflower/public/design_thumbnails/0547/3461/rrice_cream_sprinkles_pattern_mint_shop_thumb.png);
-    height: 400px;
-}
-
-.scoop {
-    text-align: center;
-    font-size: x-large;
-}
-
-.iceBody {
-    background-image: url("icecream1.jpg");
-    background-blend-mode: multiply;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.backbtn {
-    font-size: 25px;
 }
 
 /* adds background color full view height of page*/
@@ -24,24 +7,23 @@ body {
     height: 100vh;
 }
 
-
 /* makes the column that displays the weather hidden*/
-/*#weatherCol {
+#weatherCol {
     display: none;
 
 }
 
 /* makes the column that displays the Ice Cream stores hidden*/
-/*#iceCreamCol {
+#iceCreamCol {
     display: none;
 }
 
 /* makes the reset button that resets the weather hidden*/
-/*#resetBtn {
+#resetBtn {
     display: none;
 }
 
 /* makes the store button hidden*/
-/*.storeBtn {
+.storeBtn {
     display: none;
 };
