@@ -3,28 +3,6 @@ body{
     background-image: url(https://s3.amazonaws.com/spoonflower/public/design_thumbnails/0547/3461/rrice_cream_sprinkles_pattern_mint_shop_thumb.png);
 
 
-body {
-    background-color: #772014;
-}
-
-.scoop {
-    text-align: center;
-    font-size: x-large;
-}
-
-.iceBody {
-    background-image: url("icecream1.jpg");
-    background-blend-mode: multiply;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.backbtn {
-    font-size: 25px;
-}
-
-
-
 /* adds background color full view height of page*/
 
 #styling {
@@ -48,11 +26,8 @@ body {
 /* makes the reset button that resets the weather hidden*/
 
 #resetBtn {
-
-    display: flex;
-}
     display: none;
-    }
+}
 
 
 
@@ -63,3 +38,7 @@ body {
     display: none;
 }
 
+/* makes the ice cream button hidden  */
+.store-btn{
+    display: none;
+}

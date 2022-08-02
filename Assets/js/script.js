@@ -6,13 +6,11 @@ var inputEl = document.querySelector('input');
 var apiLon;
 var apiLat;
 
-var iceCreamCollum = document.getElementById("iceCreamCol");
-var weatherCollum = document.getElementById("weatherCol");
-var resetBtn = document.getElementById("resetBtn");
-var icecreamBtn = document.querySelector(".storeBtn");
+var iceCreamCol = document.getElementById("iceCreamCol");
+var weatherCol = document.getElementById("weatherCol");
+var reloadBtn = document.getElementById("resetBtn");
+var iceCreamBtn = document.getElementById("storeBtn");
 
-
-//  starts 
 
 function init() {
     var saveData = localStorage.getItem('postal_code');
@@ -21,7 +19,7 @@ function init() {
     }
 };
 
-function localReset() {
+function resetBtn() {
     localStorage.removeItem('postal_code');
     inputEl.value = '';
     location.reload();
@@ -29,9 +27,7 @@ function localReset() {
 
 function storeBtn() {
     storeSearch(apiLon, apiLat);
-
-    iceCreamCollum.style.display = "flex";
-
+    iceCreamCol.style.display = "flex";
 }
 
 function storeSearch(apiLon, apiLat) {
@@ -49,11 +45,9 @@ function weatherBtn(localData) {
     }
     var apiUrl = (`https://api.weatherbit.io/v2.0/forecast/daily?postal_code=${inputValue}&days=7&units=I&key=${weatherKey}`);
     getWeather(apiUrl);
-    weatherCollum.style.display = "flex";
-    icecreamBtn.style.display = "flex";
-
-
-
+    weatherCol.style.display = "flex";
+    iceCreamBtn.style.display = "flex";
+    reloadBtn.style.display = "flex";
 };
 
 function getWeather(apiUrl) {
