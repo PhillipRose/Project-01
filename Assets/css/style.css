@@ -1,7 +1,8 @@
 /*adds image to the whole background of page*/
-body{
+
+body {
     background-image: url(https://s3.amazonaws.com/spoonflower/public/design_thumbnails/0547/3461/rrice_cream_sprinkles_pattern_mint_shop_thumb.png);
-};
+}
 
 
 /* adds background color full view height of page*/
@@ -9,6 +10,7 @@ body{
 #styling {
     height: 100vh;
 }
+
 
 /* makes the column that displays the weather hidden*/
 
@@ -31,15 +33,15 @@ body{
 }
 
 
-
-
 /* makes the store button hidden*/
 
 .storeBtn {
     display: none;
 }
 
+
 /* makes the ice cream button hidden  */
-.store-btn{
+
+.store-btn {
     display: none;
 }
