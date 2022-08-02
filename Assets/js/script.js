@@ -5,7 +5,7 @@ const mapKey = '28oyI0GbeI2xfeMfXGihR4g2FOlIRb4p';
 var inputEl = document.querySelector('input');
 var apiLon;
 var apiLat;
-
+//  starts 
 function init() {
     var saveData = localStorage.getItem('postal_code');
     if (saveData) {
