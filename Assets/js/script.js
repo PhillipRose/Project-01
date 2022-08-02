@@ -9,7 +9,7 @@ var apiLat;
 var iceCreamCol = document.getElementById("iceCreamCol");
 var weatherCol = document.getElementById("weatherCol");
 var reloadBtn = document.getElementById("resetBtn");
-var iceCreamBtn = document.getElementById("storeBtn");
+var iceCreamBtn = document.querySelector(".storeBtn");
 
 
 function init() {
