@@ -8,7 +8,7 @@ It's a hot day outside and you are craving ice cream. Using our application it w
 
 # Gallery
 
-![](Assets/Images/project-1.jpg)
+![](./Assets/Images/the%20scoop.jpg)
 
 # Features
 * MapQuest API
