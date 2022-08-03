@@ -21,24 +21,6 @@ function init() {
     }
 };
 
-// when the try again button is clicked, this will clear the input and local storage then reload the page.
-function resetBtn() {
-    localStorage.removeItem('postal_code');
-    inputEl.value = '';
-    location.reload();
-};
-
-// When ice cream button is clicked, will run the url creation for the mapquest fetch with data from the weather api fetch. Also shows the ice cream row.
-function storeBtn() {
-    storeSearch(apiLon, apiLat);
-    iceCreamCol.style.display = "flex";
-};
-
-// assembles the url for the mapquest fetch and passes it through to the fetch function.
-function storeSearch(apiLon, apiLat) {
-    storeApi = `https://www.mapquestapi.com/search/v4/place?location=${apiLon}%2C%20${apiLat}&sort=distance&feedback=false&key=${mapKey}&pageSize=5&q=ice%20cream`;
-    getStores(storeApi);
-}
 
 // When the weather button is clicked, this will check local storage and use the provided data to call a GET fetch from the Weatherbit Api and set the local storage if it is not there. This will also display the weather cards, the ice cream button and the try again button.
 function weatherBtn(localData) {
@@ -48,13 +30,12 @@ function weatherBtn(localData) {
         inputValue = inputEl.value;
         localStorage.setItem('postal_code', inputValue);
     }
-    var apiUrl = (`https://api.weatherbit.io/v2.0/forecast/daily?postal_code=${inputValue}&days=7&units=I&key=${weatherKey}`);
+    var apiUrl = (`https://api.weatherbit.io/v2.0/forecast/daily?postal_code=${inputValue}&days=7&units=I&key=${weatherKeyBackup}`);
     getWeather(apiUrl);
     weatherCol.style.display = "flex";
     iceCreamBtn.style.display = "flex";
     reloadBtn.style.display = "flex";
 };
-
 
 // the fetch for the weather api, passes the parsed data to the showWeather function.
 function getWeather(apiUrl) {
@@ -74,16 +55,34 @@ function getWeather(apiUrl) {
     return weatherData;
 };
 
-// loops through the mapquest api data to display the store names and streets to the user
-function showStores(storeArr) {
-    for (var i = 0; i < storeArr.length; i++) {
-        console.log(i + ' loop count');
-        var storeName = document.getElementById('name-' + i);
-        var location = document.getElementById('street-' + i);
-        storeName.append(storeArr[i].name);
-        location.append(storeArr[i].place.properties.street);
+// loops over the Weatherbit data to display to the user and stores the postal code coordinates to use in the Mapquest api fetch. 
+function showWeather(weatherArr, data) {
+    for (var i = 0; i < weatherArr.length; i++) {
+        console.log(i + ' is the loop count');
+        console.log(weatherArr[i]);
+        var daySlot = document.getElementById('day-' + i);
+        var maxSlot = document.getElementById('max-' + i);
+        var minSlot = document.getElementById('min-' + i);
+        var days = moment(weatherArr[i].datetime).format('dddd');
+        daySlot.textContent = days;
+        maxSlot.textContent = ('High: ' + Math.round(weatherArr[i].max_temp));
+        minSlot.textContent = ('Low: ' + Math.round(weatherArr[i].min_temp));
     };
+    apiLat = Number(data.lat);
+    apiLon = Number(data.lon);
 };
+
+// When ice cream button is clicked, will run the url creation for the mapquest fetch with data from the weather api fetch. Also shows the ice cream row.
+function storeBtn() {
+    storeSearch(apiLon, apiLat);
+    iceCreamCol.style.display = "flex";
+};
+
+// assembles the url for the mapquest fetch and passes it through to the fetch function.
+function storeSearch(apiLon, apiLat) {
+    storeApi = `https://www.mapquestapi.com/search/v4/place?location=${apiLon}%2C%20${apiLat}&sort=distance&feedback=false&key=${mapKey}&pageSize=5&q=ice%20cream`;
+    getStores(storeApi);
+}
 
 // the fetch for the mapquest api that parses and passes the data to showStores for display to the user.
 function getStores(storeApi) {
@@ -105,21 +104,24 @@ function getStores(storeApi) {
     return shopData;
 };
 
-// loops over the Weatherbit data to display to the user and stores the postal code coordinates to use in the Mapquest api fetch. 
-function showWeather(weatherArr, data) {
-    for (var i = 0; i < weatherArr.length; i++) {
-        console.log(i + ' is the loop count');
-        console.log(weatherArr[i]);
-        var daySlot = document.getElementById('day-' + i);
-        var maxSlot = document.getElementById('max-' + i);
-        var minSlot = document.getElementById('min-' + i);
-        var days = moment(weatherArr[i].datetime).format('dddd');
-        daySlot.textContent = days;
-        maxSlot.textContent = ('High: ' + Math.round(weatherArr[i].max_temp));
-        minSlot.textContent = ('Low: ' + Math.round(weatherArr[i].min_temp));
+
+// loops through the mapquest api data to display the store names and streets to the user
+function showStores(storeArr) {
+    for (var i = 0; i < storeArr.length; i++) {
+        console.log(i + ' loop count');
+        var storeName = document.getElementById('name-' + i);
+        var location = document.getElementById('street-' + i);
+        storeName.append(storeArr[i].name);
+        location.append(storeArr[i].place.properties.street);
     };
-    apiLat = Number(data.lat);
-    apiLon = Number(data.lon);
 };
+
+// when the try again button is clicked, this will clear the input and local storage then reload the page.
+function resetBtn() {
+    localStorage.removeItem('postal_code');
+    inputEl.value = '';
+    location.reload();
+};
+
 // Runs every time the page loads, causes a new weatherbit api fetch if there is a postal code in localStorage 
 init();
