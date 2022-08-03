@@ -8,10 +8,21 @@ It's a hot day outside and you are craving ice cream. Using our application it w
 
 # Gallery
 
-![](Assets/Images/project-1.jpg)![](Assets/Images/project-1.jpg)
+![](Assets/Images/project-1.jpg)
 
+# Features
 * MapQuest API
-We don't know how to search the weather for certain areas based off zipcode, or find the nearest ice cream shops and location. Weatherbit API
+* Weatherbit Api
+* JavaScript
+* Bulma
+* Moment.js
 
-Our application allows users to find the high and low temperature of a certain area based off postal code. Than the postal code gets stored to local storage and allows the user to find the nearest ice cream stores and street addresses. Deployed site
+# Problem
+We don't know how to search the weather for certain areas based off zipcode, or find the nearest ice cream shops and location. 
 
+# Solution
+Our application allows users to find the high and low temperature of a certain area based off postal code. Than the postal code gets stored to local storage and allows the user to find the nearest ice cream stores and street addresses.
+
+# Deployed site
+
+[live link to What's The Scoop](https://philliprose.github.io/Project-01/)
